@@ -1,0 +1,9 @@
+---
+- hosts: pinto-host
+  remote_user: ubuntu
+  sudo: yes
+  tasks:
+    - name: "Install pinto"
+      apt: pkg=pinto state=latest
+    - name: "Pinto service is running"
+      service: name=pinto state=started
